@@ -7,6 +7,9 @@ const configuration = new Configuration({
   apiKey: process.env.openAIkey,
 });
 const openai = new OpenAIApi(configuration);
+app.get("/", (req, res) => {
+  res.send("Working");
+});
 app.post("/generateResponse", async (req, res) => {
   const prompt = req.body.prompt;
   // const systemMessage = `you can act as a Expert of shayari, The user will provide you a keyword as an input and you have to generate a Shayari for them in Hindi`;
